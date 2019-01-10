@@ -15,7 +15,7 @@ steps:
     versionSpec: '>= 2.5'
 
 - script: |
-    gem install bundler
+    sudo gem install bundler
     bundle install --without production
   displayName: 'bundle install'
 
