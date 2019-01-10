@@ -12,10 +12,9 @@ pool:
 steps:
 - task: UseRubyVersion@0
   inputs:
-    versionSpec: '>= 2.5'
+    versionSpec: '>= 2.6'
 
 - script: |
-    sudo gem install bundler
     bundle install --without production
   displayName: 'bundle install'
 
