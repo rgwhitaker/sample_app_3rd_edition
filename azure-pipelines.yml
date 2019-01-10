@@ -16,8 +16,13 @@ steps:
 
 - script: |
     gem install bundler
-    bundle install --retry=3 --jobs=4
+    bundle install --without production
   displayName: 'bundle install'
 
-- script: bundle exec rake
-  displayName: 'bundle exec rake'
+- script: |
+    bundle exec rake db:migrate
+  displayName: 'db:migrate'
+
+- script: |
+    bundle exec rake test
+  displayName: 'test'
